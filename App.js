@@ -24,17 +24,6 @@ const fetchFonts = () => {
   });
 };
 
-// const render = () => {
-//   return (
-//     <View style={styles.container}>
-//       <FlatList
-//         data={data}
-//         renderItem={(item) => <MovieCard movie={item.item} />}
-//       />
-//     </View>
-//   );
-// };
-
 export default function App() {
   const [loaded, setLoaded] = useState(false);
 
@@ -44,11 +33,9 @@ export default function App() {
         startAsync={fetchFonts}
         onFinish={() => {
           setLoaded(true);
-          // render();
         }}
         onError={() => {
           console.log("Font Not Loaded");
-          // render();
         }}
       />
     );
@@ -59,12 +46,3 @@ export default function App() {
     </ReduxProvider>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     // backgroundColor: "#fff",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-// });
